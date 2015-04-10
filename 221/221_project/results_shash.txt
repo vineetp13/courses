@@ -1,0 +1,21 @@
+Quant, Mean, Median, First Run
+Measurement, 0, 0
+RDTSC, 58.915599, 52
+Loop, 5.848217, 5
+Function Calls, 0, 0
+p0, 54.238195, 55
+p1, 55.040335, 55
+p2, 56.321283, 58
+p3, 57.955888, 58
+p4, 57.820123, 58
+p5, 59.217551, 61
+p6, 60.231695, 61
+p7, 60.309807, 61
+System Calls, 0, 0
+getpid(), 53.998589, 55, 48
+getuid(), 142.676190, 139, 136
+getppid(), 167.902566, 167, 160
+wait(&ptr_to_int), 394.916453, 388, 388
+write(fd,buf,sizeof(buf)), 170.049064, 170, 163
+raise(SIGCHLD), 369.206270, 364, 357
+

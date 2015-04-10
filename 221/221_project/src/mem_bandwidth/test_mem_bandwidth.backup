@@ -1,0 +1,15 @@
+#include "test_mem_bandwidth.h"
+#include "measure.h"
+
+
+int main()
+{
+	set_top_priority();
+	attach_to_cpu_0();
+
+	char* source = (char*)malloc(8*1024*1024*sizeof(char));
+	char* dest = (char*)malloc(8*1024*1024*sizeof(char));
+//	memcpy(dest,source,sizeof(source));
+	PM_(memcpy(dest,source,sizeof(source)), "Memory Bandwidth, "O_STR);
+//        PM_(memset(dest,0,sizeof(dest)), "Memory Bandwidth, "O_STR);
+}
