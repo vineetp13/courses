@@ -1,0 +1,34 @@
+/*
+*
+* Multiply by 1000000 to get actual value
+*
+*/
+shashank@r2d2:~/Coder/Git/cse_221_proj$ ./system_call_overhead 
+getpid() overhead: 0.007083
+getuid() overhead: 0.002766
+getppid() overhead: 0.002900
+wait() overhead: 0.008108
+write() overhead: 0.002491
+raise() overhead: 0.013650
+shashank@r2d2:~/Coder/Git/cse_221_proj$ ./system_call_overhead 
+getpid() overhead: 0.007233
+getuid() overhead: 0.002816
+getppid() overhead: 0.002583
+wait() overhead: 0.008608
+write() overhead: 0.002850
+raise() overhead: 0.012875
+shashank@r2d2:~/Coder/Git/cse_221_proj$ ./system_call_overhead 
+getpid() overhead: 0.008033
+getuid() overhead: 0.003025
+getppid() overhead: 0.002434
+wait() overhead: 0.009275
+write() overhead: 0.002758
+raise() overhead: 0.014433
+shashank@r2d2:~/Coder/Git/cse_221_proj$ ./system_call_overhead 
+getpid() overhead: 0.007133
+getuid() overhead: 0.003442
+getppid() overhead: 0.002683
+wait() overhead: 0.008317
+write() overhead: 0.002600
+raise() overhead: 0.012775
+

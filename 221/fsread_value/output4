@@ -1,0 +1,59 @@
+Quant, Mean, Median, First Run, Min, Max
+Measurement, 0, 0
+RDTSC, 245.398400, 238, 238, 238, 21080
+Loop, 49.455598, 29, 6, 6, 259014
+Function Calls, 0, 0
+p0, 161.684672, 51, 48, 45, 33354397
+p1, 135.679956, 51, 48, 48, 26924138
+p2, 65.923172, 59, 51, 48, 2227937
+p3, 63.944597, 51, 51, 51, 1934781
+p4, 65.706474, 54, 51, 51, 1504854
+p5, 67.370900, 54, 51, 51, 619069
+p6, 69.332828, 54, 54, 32, 2139917
+p7, 69.737418, 54, 51, 51, 1615242
+System Calls, 0, 0
+gettid(), 181.396700, 169, 166, 163, 40903
+getpid(), 55.195400, 48, 45, 45, 864
+getuid(), 173.021000, 148, 148, 148, 47198
+getppid(), 401.431700, 166, 163, 160, 1824311
+wait(&ptr_to_int), 350.259200, 311, 305, 305, 42246
+"write(fd,buf,sizeof(buf))", 180.645100, 172, 172, 169, 31818
+"write(fd,buf,sizeof(buf));sync();", 13755970.500000, 9121265, 7713185, 7713185, 45620383
+raise(SIGCHLD), 363.679400, 354, 338, 335, 41815
+Quant, Mean, Median, First Run, Min, Max
+Process context switch cost, 1677.300730, 754, 719, 64, 27589117
+Quant, Mean, Median, First Run, Min, Max
+Process context switch cost, 1673.815303, 574, 565, 58, 27783820
+Quant, Mean, Median, First Run, Min, Max
+Pthread context switch cost, 113.732691, 53, 42, 42, 40701922
+Quant, Mean, Median, First Run, Min, Max
+Clone context switch cost, 532.317146, 429, 426, 64, 24313774
+Quant, Mean, Median, First Run, Min, Max
+fork_overhead, 0, 0
+Fork cost, 73279.000000, 60441, 56380, 56029, 136675
+Quant, Mean, Median, First Run, Min, Max
+fork_overhead, 0, 0
+Quant, Mean, Median, First Run, Min, Max
+fork_overhead, 0, 0
+Quant, Mean, Median, First Run, Min, Max
+fork_overhead, 0, 0
+Quant, Mean, Median, First Run, Min, Max
+fork_overhead, 0, 0
+Quant, Mean, Median, First Run, Min, Max
+fork_overhead, 0, 0
+Quant, Mean, Median, First Run, Min, Max
+fork_overhead, 0, 0
+Quant, Mean, Median, First Run, Min, Max
+fork_overhead, 0, 0
+Quant, Mean, Median, First Run, Min, Max
+fork_overhead, 0, 0
+Quant, Mean, Median, First Run, Min, Max
+fork_overhead, 0, 0
+Quant, Mean, Median, First Run, Min, Max
+fork_overhead, 0, 0
+Quant, Mean, Median, First Run, Min, Max
+pthread_overhead, 0,0
+pthread cost, 40003.865100, 19116, 17946, 320, 17716533
+Quant, Mean, Median, First Run, Min, Max
+clone_overhead, 0, 0
+Clone cost,8022.900000, 6960, 6195, 6099, 17825

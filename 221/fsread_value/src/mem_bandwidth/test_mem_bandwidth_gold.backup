@@ -1,0 +1,355 @@
+#include "test_mem_bandwidth.h"
+//#include "measure.h"
+//#include "measure.c"
+//#include "qselect.c"
+//#include "qselect.h"
+#include <stdlib.h>
+
+#define UNROLL(stmt)		\
+{				\
+	for(int i=0;i<n;i+=256){	\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;           	\
+				\
+	stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;           	\
+				\
+	stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;           	\
+				\
+	stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+				\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;			\
+	stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;           	\
+				\
+	stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+        stmt;                   \
+				\
+	}	\
+}				\
+
+int b,c;
+
+void seq_write(int* arr, int n)
+{
+	UNROLL(arr[i] = i);
+}
+
+void seq_read(int* arr, int n)
+{
+//	register int b;
+	UNROLL(b = arr[i]);
+}
+
+void rand_read2(int* arr,int n)
+{
+//	register int b;
+//	register int c;
+        UNROLL( b = arr[i];c = arr[n-i]);
+}
+
+void rand_write2(int* arr,int n)
+{
+	UNROLL(arr[i] =  i;arr[n-i] = i);
+}
+
+int main()
+{
+      set_top_priority();
+      attach_to_cpu_0();
+
+        int* source = (int*)malloc(1*1024*1024*sizeof(int));
+        int* dest = (int*)malloc(1*1024*1024*sizeof(int));
+	int* arr = (int*)malloc(1*1024*1024*sizeof(int));
+//      memcpy(dest,source,sizeof(source));
+        PM_COUNT(memcpy(dest,source,1*1024*1024*sizeof(int)), "Memory Bandwidth, "O_STR,1000);
+
+	PM_COUNT(seq_write(arr, 1048576), "Sequential Write, "O_STR,1000);
+
+	PM_COUNT(rand_write2(arr, 1048576), "Random Write, "O_STR,1000);
+
+	PM_COUNT(seq_read(arr, 1048576), "Sequential Read, "O_STR,1000);
+
+	PM_COUNT(rand_read2(arr, 1048576), "Random Read, "O_STR,1000);
+}
