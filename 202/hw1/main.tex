@@ -1,0 +1,174 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\title{202 Algorithms HW 1}
+\author{Jian Xu, Amirsaman Memaripour, Radheshyam Balasundaram, Vineet Pandey}
+
+\begin{document}
+\maketitle
+
+\section*{Question 1}
+\paragraph
+1 $f(n) + g(n) \in O(f(n))$ Invalid!
+
+Counter example: f(n) = n and g(n) = $n^{2}$
+
+f(n) + g(n) = n + $n^{2} \notin O(f(n))$
+
+\paragraph
+2 $f(n) + g(n) \in O(g(n))$ Valid!
+
+$f(n) \in O(g(n)) \rightarrow \exists N, \exists C, \forall n>N, 0 \leq f(n) \leq C \times g(n) \rightarrow$ 
+ 
+$g(n) \leq f(n) + g(n) \leq (C + 1) \times g(n) \rightarrow$
+
+$\exists N^{'}, \exists C^{'}, \forall n > N^{'}, 0 \leq f(n) + g(n) \leq C^{'} \times g(n)$
+
+\paragraph
+3 $2^{f(n)} \in O(2^{g(n)})$ Invalid!
+
+Counter example: $f(n) = 2n, g(n) = n \rightarrow 2^{f(n)} = 4^{n}, 2^{g(n)} = 2^{n}$
+
+$2^{f(n)} \notin 2^{g(n)}$
+
+\paragraph
+4 $f(n) \times g(n) \in O(g(n)^{2})$ Valid!
+
+$\exists N, \exists C, \forall n>N, 0 \leq f(n) \leq C \times g(n) \rightarrow 0 \leq f(n) \times g(n) \leq C \times g(n)^{2}$
+
+\paragraph
+5 $f(n^{2}) \in O(g(n^{2}))$ Valid!
+
+$f(n) = a \times n^{m} + b \times n^{m-1} + ... + c \times n^{0}$
+
+$g(n) = d \times n^{k} + e \times n^{k-1} + ... + f \times n^{0}$ where $k \geq m$
+
+$f(n^{2}) = a \times n^{2 \times m} + b \times n^{2 \times (m - 1)} + ... + c \times n^{0}$
+
+$g(n^{2}) = d \times n^{2 \times k} + e \times n^{2 \times (k - 1)} + ... + f \times n^{0}$
+
+$k \geq m \rightarrow 2 \times k \geq 2 \times m$
+\section*{Question 2}
+We use a stack of size O(n) to complete the algorithm in O(n) time. 
+
+We traverse the array sequentially from index 0 and compare every element with the top of stack. If the top of stack is larger, then we add this element to the stack and move on to the next element in array. If this element is larger than top of stack, then we pop elements from the stack till the top of stack is greater than the element or the stack is empty. We add the element to the stack and move on to next element in array. 
+
+Algorithm
+
+\begin{algorithmic}
+ \STATE Stack $S \leftarrow \{ \}$ // Stack where every element is (value, index)
+ \STATE Variable i=0
+	\STATE Array-element new
+    \STATE Array $B[N]$ // Array to hold the answers (closest larger index with larger value)
+
+ \WHILE{$i \neq N+1$}
+ \IF{$i = 0$}
+ \STATE Push((A[i], i), S) // Push first element and index in stack
+ \ENDIF
+ \STATE new = A[i]
+ \WHILE{new $>$ top(S)}  
+ \STATE Pop(S) // Pop all stack elements for which new is the answer
+ \STATE B[top-$>$index] = i
+ \ENDWHILE
+ \STATE Push ((A[i], i), S)
+ \STATE $i++$
+ \ENDWHILE
+
+\end{algorithmic}
+
+
+
+\section*{Question 3}
+We need to prove that in a graph $G$ of $n$ vertices, if every vertex has degree greater than $2n/3$, the graph is hamiltonian. We show this by constructing a Hamiltonian Path for this graph. 
+
+Let $P$ denote the Hamiltonian path we're constructing at any stage. Initially $P$ is empty. We start with any artibrary vertex $v_1$ and add it to $P$. Then we select any neighbor of $v_1$, say $v_2$, and add it to $P$. Next we add a neighbor of $v_2$ other than $v_1$, say $v_3$ and so on. At stage $i$, after adding $v_i$, we add it's neighbor $v_{i+1}$ which is not yet present in the path $P$. We keep adding vertices until a stage $t$ we don't find a neighbor for $v_t$ that is not in $P$. At this stage $t$, if size of, $|P| = t$ is $n$, then $P$ is a hamiltonian path and we can halt. Otherwise, notice that all neighbors of $v_t$ should be part of $P$. Hence, the number of vertices in $P$, denoted by $t$, is $>\frac{2n}{3} + 1$.
+
+Now, among the remaining $n-t$ vertices that are not in $P$, we follow the following strategy to add them to $P$. For every vertex $v$ that is not yet in $P$, we choose two adjacent vertices in $P$, $v_k, v_{k+1}$ that are also adjacent to $v$ and we remove edge $(v_k, v_{k+1})$ and add the two edges $(v_k, v), (v, v_{k+1})$ to $P$. We next prove the existence of $v_k, v_{k+1} \in P$ for every $v \notin P$, where $v_k, v_{k+1}, v$ form a triangle.
+
+For some $v \notin P$, assume that there are no two neighbors that are also adjacent in $P$. What can be the maximum degree of this $v$? It could be adjacent to at most $t/2$ vertices from $P$ and could be adjacent to all the other $n-t-1$ vertices that are not in $P$. So, it's degree is bounded by:
+
+\begin{equation*}
+deg(v) \leq \frac{t}{2} + n-t-1 = n - \frac{t}{2} -1
+\end{equation*}
+
+We know that $t>\frac{2n}{3} + 1$. Using this, we get:
+
+\begin{align*}
+deg(v) & < n - \frac{t}{2} -1 \\
+& < n - \frac{n}{3} - \frac12 - 1\\
+& =\frac{2n}{3} - \frac{3}{2}
+\end{align*}
+
+This is a contradiction because we assumed degree of every vertex is $>2n/3$.
+
+\section*{Question 4}
+\subsection*{Adjacency List}
+We devise a graph traversal algorithm to check for existance of triangles in a graph. For parts of the graph that cannot be reached directly from the starting node, we assume that the algorithm will be executed over and over again on isolated areas.
+
+Instead of marking nodes as visited, we will mark edges and the algorithm will terminate once a triangle is found or all edges are marked as visited. In order to be able to detect triangles, we always keep track of the last two nodes in the path, e.g. A and B respectively, leading to current node, e.g. C, and check if C is directly connected to A. As we know that A is directly connected to B and there is an edge between B and C, finding an edge between A and C means that there is at least one triangle in the graph.
+
+\begin{algorithmic}
+ \STATE $F \leftarrow \{ V_{0} \}$ // Frontiers queue
+ \STATE $R \leftarrow \{ \}$ // Set of reached edges
+
+ \WHILE{$E \neq R$}
+ \STATE $C = dequeue(F)$
+ \STATE $P = previous(previous(C))$
+ \IF{$\exists V_i \in V where ~ V_i ~ connects ~ C ~ and ~ P$}
+ \STATE terminate
+ \ENDIF
+ \FORALL{$N \in neighbours(C)$}
+ \IF{$vertice(C, N) \notin R$}
+ \STATE $F = F \cup N$
+ \STATE // We'll also record C and the node before C that we've visisted earlier
+ \ENDIF
+ \ENDFOR
+ \ENDWHILE
+\end{algorithmic}
+
+\subsection*{Adjacency Matrix}
+In this algorithm, we start with node $V_i$ and generate a list of all it's neighbors in $N$. Next, we selecct all pairs of vertices in $N$ and check if they have an edge. If such an edge exists, we have found a triangle in the graph and the algorithm terminates. Otherwise, we will continue the same steps for other nodes in the graph until we either find a triangle or we run out of vertices.
+
+Let $A$ denote the adjacency matrix, where $A[v_i][v_j] = 1$ if and only if there's an edge between $v_i, v_j$.
+
+\begin{algorithmic}
+  
+ \STATE $F \leftarrow \{V_1, ... V_n \}$
+ \FORALL{$V_i \in F$}  \STATE //$O(n)$ operations
+  \STATE $N = \emptyset$
+  \FORALL{$V_j \in F$}  \STATE //Collect all neighbors
+   \IF{$A[v_i][v_j] == 1$}
+    \STATE $N = N \cup v_j$
+   \ENDIF
+   \FORALL{$v_j, v_k \in N; v_k \neq v_j$}
+     \IF{$A[v_k][v_j] == 1$}
+     \STATE Return TRUE
+     \ENDIF
+   \ENDFOR
+  \ENDFOR
+ \ENDFOR
+ \STATE Return False
+\end{algorithmic}
+
+\textbf{Analysis}
+
+In each loop, we do the following two opertaions:
+\begin{itemize}
+\item Build the set of neighbors $N$. THis takes $O(n)$ operations.
+\item Run through every pair of vertices in $N$. This takes $O(d_i^2)$ operations if degree of vertex is $d_i$.
+\end{itemize}
+So, total time is $\sum [O(n) + d_i^2]$. But $\sum d_i^2 \leq \sum d_i * n \leq O(nm)$. Where $m$ is the number of nodes. This gives an overall time of $O(n^2) + O(mn)$.
+
+
+
+\section*{Question 5}
+
+
+\end{document}
