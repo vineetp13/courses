@@ -1,0 +1,91 @@
+Name of predictor
+--
+PREDETAH: Eatin em branches up
+
+One-sentence description
+--
+The predictor is a gshare predictor using pc xor GHR and using the last 14 bits to index into a BHT of 16K entires of size 2 bits each. 
+
+Results table
+----
+Run 14 in the table in Results section below. 
+
+Description
+------
+
+Introduction
+------------
+Implemented 
+* local predictor with 2-bit saturating counters in BHT. Varied sizes of PHT and BHT to find sweet spot. 
+* used GHR in different ways to see effect
+* implemented choose predictor but did not imporve results for 4K Global tables. Results were good only for 16K and above. 
+*** found gshare (pc ^ GHR) to provide best results over all traces. ***
+
+Objective: minimize average mispredict rate. In case of two close such average values choose the one which minimizes more on one particular trace rather than providing incremental benefits on all traces. 
+
+Analysis
+-------
+An amateurish sensitivity analysis of the various traces to parameters in the predictor directs my final choice of parameters. The table below shows the various runs (with different predictor schemes and parameters to see which traces were *particularly* sensitive to some sizes, and hence move towards an optimal configuration). Not all values used below fit in the 32K size limit, but those runs were used to see the variation at extreme sizes. 
+
+Note:
+* Size of GHR was restricted by 15 bits (assuming all bits of GHR will be used in addressing BHT, which can be maximum 32K) 
+
+Runs
+---
+Not all values fit within the requirements of 32K, but they are used to get a sense of behaviour of traces with predictors. 
+The runs which fit in with size reqt are marked by **.
+
+1. only local (32K PHT, 32K BHT)
+2. only local (32K,1K)
+3. only local (1K, 1K) 
+4. only local (8K, 1K)
+5. only local (8K, 16) **
+6. only local (32K, 02) ** 
+7. only local (3K, 1K) ** (uses 1K*2bits = 2KB for BHT, and 3K*10 = 30K for PHT)
+8. only local (2.54K,2K) **
+9. only local (2K,4K) **
+10. only local (1K, 8K)**
+
+11. only GHR (15 bits), BHT = 32K **
+12. only GHR (13 bits), BHT = 8K **
+
+13. (GHR xor pc) GHR (13), BHT=8K **
+14. (GHR xor PC) GHR (14), BHT=16K ** 
+
+Results 
+-------
+Misprediction varioation with various runs and traces
+The traces which showed a particular sensitivity (roughly, more than 2 units variation) are marked by astericks. Eg: INT2 shows a jump from run 2 to run 3. (incomplete)
+
+Runs-->	1	2	3	4	5	6	7	8	9	10	11	12	13	14
+
+FP1	2.7	2.7	2.9	2.7	*4.8*	*10.2*	2.8	*6.4*	2.7	2.8	6.3	7.3	4.2	4.1
+FP2	1.8	1.9	2.0	1.9	2.6	*6.5*	2.0	2.6	1.8	1.8	2.4	2.6	1.1	1.1
+
+INT1	6.6	*12.2*	12.4	12.2	*15.3*	*22.3*	12.2	17.2	9.5	8.4	13.1	15.5	9.5	8.5
+INT2	11.5	12.2	*14.5*	12.4	*14.7*	*19.0*	13.3	22.3	13.0	13.9	13.7	16.8	10.9	9.5
+
+MM1	10.3	10.4	10.5	10.4	*13.0*	*17.9*	10.5	12.9	10.3	10.4	10.3	11.2	9.7	9.4
+MM2	13.6	13.7	14.0	13.7	14.3	*17.1*	13.8	18.8	13.7	13.9	11.2	12.2	12.2	11.5
+
+SERV1	4.4	4.7	*14.1*	*7.1*	8.5	9.9	11.9	17.3	11.6	13.7	9.2	11.4	10.6	7.6
+SERV2	4.5	4.8	*14.7*	*7.6*	8.4	9.2	12.2	17.1	12.1	14.2	9.2	11.4	11.0	7.9
+
+Av value				9+		8+		9	<9	<9		8.3	7.5
+
+Run 14 provides the best avg value
+
+Conclusions about sensitivity (incomplete)
+-------
+FP1 - sensitive to BHT size
+FP2 - 
+
+INT1 - sens to size of BHT, sensitive to GHR 
+INT2 - sens to size of PHT
+
+MM1 - sensitive to really small sizes of BHT, not sensitive to PHT
+MM2 - same as MM1
+
+SERV1 - same as SERV2 
+SERV2 - sensitive to PHT size, not sensitive to BHT size
+

@@ -1,0 +1,4 @@
+make
+#gunzip -c art.trace.gz | ./cache-sim -r #| grep -e CPI -e Average 
+#gunzip -c swim.trace.gz | ./cache-sim -r #| grep -e CPI -e Average
+gunzip -c art.trace.gz | ./cache-sim -t 32768 2 16 256 16 16 262144 4 16

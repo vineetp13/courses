@@ -1,0 +1,257 @@
+__________________________________
+__________________________________
+Cache Config:
+  L1 size=32 KB, assoc=8, LS=64 bytes, lat=11 cyc
+  Victim size=4096 bytes, assoc=4, LS=32 bytes, lat=4 cyc
+  L2 size=200 KB, assoc=8, LS=64 bytes, lat=21 cyc
+ Total size of all caches 241664 bytes
+Total CPI=4.35
+Average memory access time=11.02
+523 1520886 
+L1 Miss Rate=0.0003439
+Victim Local Miss Rate=0.41
+L2 Local Miss Rate=0.41
+523 1520886 
+L2 Global Miss Rate=0.0000585
+**********************************
+**********************************
+Cache Config:
+  L1 size=32 KB, assoc=4, LS=64 bytes, lat=7 cyc
+  Victim size=4096 bytes, assoc=4, LS=32 bytes, lat=4 cyc
+  L2 size=200 KB, assoc=8, LS=64 bytes, lat=21 cyc
+ Total size of all caches 241664 bytes
+Total CPI=3.68
+Average memory access time=7.04
+1021 1957764 
+L1 Miss Rate=0.0005215
+Victim Local Miss Rate=0.47
+L2 Local Miss Rate=0.41
+1021 1957764 
+L2 Global Miss Rate=0.0001016
+__________________________________
+__________________________________
+Cache Config:
+  L1 size=32 KB, assoc=4, LS=64 bytes, lat=7 cyc
+  Victim size=4096 bytes, assoc=4, LS=32 bytes, lat=4 cyc
+  L2 size=200 KB, assoc=8, LS=64 bytes, lat=21 cyc
+ Total size of all caches 241664 bytes
+Total CPI=3.14
+Average memory access time=7.03
+539 1520886 
+L1 Miss Rate=0.0003544
+Victim Local Miss Rate=0.48
+L2 Local Miss Rate=0.39
+539 1520886 
+L2 Global Miss Rate=0.0000664
+**********************************
+**********************************
+Cache Config:
+  L1 size=32 KB, assoc=4, LS=32 bytes, lat=6 cyc
+  Victim size=4096 bytes, assoc=4, LS=32 bytes, lat=4 cyc
+  L2 size=200 KB, assoc=8, LS=64 bytes, lat=21 cyc
+ Total size of all caches 241664 bytes
+Total CPI=3.30
+Average memory access time=6.05
+1483 1957764 
+L1 Miss Rate=0.0007575
+Victim Local Miss Rate=0.52
+L2 Local Miss Rate=0.29
+1483 1957764 
+L2 Global Miss Rate=0.0001139
+__________________________________
+__________________________________
+Cache Config:
+  L1 size=32 KB, assoc=4, LS=32 bytes, lat=6 cyc
+  Victim size=4096 bytes, assoc=4, LS=32 bytes, lat=4 cyc
+  L2 size=200 KB, assoc=8, LS=64 bytes, lat=21 cyc
+ Total size of all caches 241664 bytes
+Total CPI=2.83
+Average memory access time=6.03
+1100 1520886 
+L1 Miss Rate=0.0007233
+Victim Local Miss Rate=0.47
+L2 Local Miss Rate=0.21
+1100 1520886 
+L2 Global Miss Rate=0.0000704
+**********************************
+**********************************
+Cache Config:
+  L1 size=32 KB, assoc=8, LS=64 bytes, lat=11 cyc
+  Victim size=4096 bytes, assoc=4, LS=32 bytes, lat=4 cyc
+  L2 size=200 KB, assoc=8, LS=64 bytes, lat=21 cyc
+ Total size of all caches 241664 bytes
+Total CPI=5.21
+Average memory access time=11.04
+1320 1957764 
+L1 Miss Rate=0.0006742
+Victim Local Miss Rate=0.59
+L2 Local Miss Rate=0.24
+1320 1957764 
+L2 Global Miss Rate=0.0000935
+__________________________________
+__________________________________
+Cache Config:
+  L1 size=32 KB, assoc=8, LS=64 bytes, lat=11 cyc
+  Victim size=4096 bytes, assoc=4, LS=32 bytes, lat=4 cyc
+  L2 size=200 KB, assoc=8, LS=64 bytes, lat=21 cyc
+ Total size of all caches 241664 bytes
+Total CPI=4.35
+Average memory access time=11.02
+523 1520886 
+L1 Miss Rate=0.0003439
+Victim Local Miss Rate=0.41
+L2 Local Miss Rate=0.41
+523 1520886 
+L2 Global Miss Rate=0.0000585
+**********************************
+**********************************
+Cache Config:
+  L1 size=32 KB, assoc=8, LS=16 bytes, lat=9 cyc
+  Victim size=4096 bytes, assoc=4, LS=16 bytes, lat=3 cyc
+  L2 size=200 KB, assoc=8, LS=64 bytes, lat=21 cyc
+ Total size of all caches 241664 bytes
+Total CPI=4.45
+Average memory access time=9.05
+2694 1957764 
+L1 Miss Rate=0.0013761
+Victim Local Miss Rate=0.55
+L2 Local Miss Rate=0.14
+2694 1957764 
+L2 Global Miss Rate=0.0001078
+__________________________________
+__________________________________
+Cache Config:
+  L1 size=32 KB, assoc=8, LS=16 bytes, lat=9 cyc
+  Victim size=4096 bytes, assoc=4, LS=16 bytes, lat=3 cyc
+  L2 size=200 KB, assoc=8, LS=64 bytes, lat=21 cyc
+ Total size of all caches 241664 bytes
+Total CPI=3.75
+Average memory access time=9.03
+2111 1520886 
+L1 Miss Rate=0.0013880
+Victim Local Miss Rate=0.41
+L2 Local Miss Rate=0.12
+2111 1520886 
+L2 Global Miss Rate=0.0000658
+**********************************
+**********************************
+Cache Config:
+  L1 size=32 KB, assoc=4, LS=16 bytes, lat=5 cyc
+  Victim size=4096 bytes, assoc=4, LS=16 bytes, lat=3 cyc
+  L2 size=200 KB, assoc=8, LS=64 bytes, lat=21 cyc
+ Total size of all caches 241664 bytes
+Total CPI=2.93
+Average memory access time=5.06
+2476 1957764 
+L1 Miss Rate=0.0012647
+Victim Local Miss Rate=0.56
+L2 Local Miss Rate=0.16
+2476 1957764 
+L2 Global Miss Rate=0.0001129
+__________________________________
+__________________________________
+Cache Config:
+  L1 size=32 KB, assoc=4, LS=16 bytes, lat=5 cyc
+  Victim size=4096 bytes, assoc=4, LS=16 bytes, lat=3 cyc
+  L2 size=200 KB, assoc=8, LS=64 bytes, lat=21 cyc
+ Total size of all caches 241664 bytes
+Total CPI=2.53
+Average memory access time=5.04
+2100 1520886 
+L1 Miss Rate=0.0013808
+Victim Local Miss Rate=0.45
+L2 Local Miss Rate=0.11
+2100 1520886 
+L2 Global Miss Rate=0.0000704
+**********************************
+**********************************
+Cache Config:
+  L1 size=32 KB, assoc=8, LS=64 bytes, lat=11 cyc
+  Victim size=4096 bytes, assoc=4, LS=32 bytes, lat=4 cyc
+  L2 size=250 KB, assoc=8, LS=64 bytes, lat=24 cyc
+ Total size of all caches 292864 bytes
+Total CPI=5.23
+Average memory access time=11.11
+1555 1957764 
+L1 Miss Rate=0.0007943
+Victim Local Miss Rate=0.65
+L2 Local Miss Rate=0.59
+1555 1957764 
+L2 Global Miss Rate=0.0003049
+__________________________________
+__________________________________
+Cache Config:
+  L1 size=32 KB, assoc=8, LS=64 bytes, lat=11 cyc
+  Victim size=4096 bytes, assoc=4, LS=32 bytes, lat=4 cyc
+  L2 size=250 KB, assoc=8, LS=64 bytes, lat=24 cyc
+ Total size of all caches 292864 bytes
+Total CPI=4.35
+Average memory access time=11.02
+531 1520886 
+L1 Miss Rate=0.0003491
+Victim Local Miss Rate=0.42
+L2 Local Miss Rate=0.48
+531 1520886 
+L2 Global Miss Rate=0.0000704
+**********************************
+**********************************
+Cache Config:
+  L1 size=32 KB, assoc=8, LS=16 bytes, lat=9 cyc
+  Victim size=4096 bytes, assoc=4, LS=16 bytes, lat=3 cyc
+  L2 size=250 KB, assoc=8, LS=64 bytes, lat=24 cyc
+ Total size of all caches 292864 bytes
+Total CPI=4.49
+Average memory access time=9.15
+3067 1957764 
+L1 Miss Rate=0.0015666
+Victim Local Miss Rate=0.55
+L2 Local Miss Rate=0.50
+3067 1957764 
+L2 Global Miss Rate=0.0004265
+__________________________________
+__________________________________
+Cache Config:
+  L1 size=32 KB, assoc=8, LS=16 bytes, lat=9 cyc
+  Victim size=4096 bytes, assoc=4, LS=16 bytes, lat=3 cyc
+  L2 size=250 KB, assoc=8, LS=64 bytes, lat=24 cyc
+ Total size of all caches 292864 bytes
+Total CPI=3.75
+Average memory access time=9.04
+2122 1520886 
+L1 Miss Rate=0.0013952
+Victim Local Miss Rate=0.41
+L2 Local Miss Rate=0.14
+2122 1520886 
+L2 Global Miss Rate=0.0000822
+**********************************
+**********************************
+Cache Config:
+  L1 size=32 KB, assoc=8, LS=64 bytes, lat=11 cyc
+  Victim size=4096 bytes, assoc=4, LS=32 bytes, lat=4 cyc
+  L2 size=250 KB, assoc=8, LS=64 bytes, lat=24 cyc
+ Total size of all caches 292864 bytes
+Total CPI=5.23
+Average memory access time=11.11
+1555 1957764 
+L1 Miss Rate=0.0007943
+Victim Local Miss Rate=0.65
+L2 Local Miss Rate=0.59
+1555 1957764 
+L2 Global Miss Rate=0.0003049
+__________________________________
+__________________________________
+Cache Config:
+  L1 size=32 KB, assoc=8, LS=64 bytes, lat=11 cyc
+  Victim size=4096 bytes, assoc=4, LS=32 bytes, lat=4 cyc
+  L2 size=250 KB, assoc=8, LS=64 bytes, lat=24 cyc
+ Total size of all caches 292864 bytes
+Total CPI=4.35
+Average memory access time=11.02
+531 1520886 
+L1 Miss Rate=0.0003491
+Victim Local Miss Rate=0.42
+L2 Local Miss Rate=0.48
+531 1520886 
+L2 Global Miss Rate=0.0000704
+**********************************
+**********************************

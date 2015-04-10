@@ -1,0 +1,71 @@
+************
+Name of Cache
+*************
+CREAM (Cache Rules Everything Around Me)
+
+************************
+One-sentence description
+************************
+Simple three-level cache: L1, victim, L2.
+
+******
+Design
+******
+* Keeping the same cacheline might be helpful 
+* However, the victim cacheline need not be same as L1 cacheline and design allows for differen values
+* (Implementation) Lot of redundant code put together in hurry. Using helper classes would have been better.  
+* L2 accessed value updated when cache hit happens in L1 or victim 
+
+*******************************
+Calculation of cache hitlatency
+*******************************
+All three caches are probed in parallel. 
+
+If served from L1 cache, = L1.latency
+If served from Victim, = Victim.latency
+(I have not done any max/min between the two cases: L1 and victim; because the hit will either be from L1 or victim, and hence it makes sense to simply use the corresponding latency value)
+If served from L2, = L1L2transfer + L2.latency
+If served from memory, = Memorytransfer
+
+Result for L1 (16K, 2-way, 32 byte line); victim (512 size, 4-way, 32-byte line); L2(256K, 4-way, 32-byte)
+---------
+art (CPI, AMAT) = 
+swim (CPI, AMAT) = 
+
+*****
+Notes
+*****
+* When the miss rate becomes too low, the value prints 0.00 (%.2f); changed it to (%.7f) to note numbers
+* the "-t" mode caused issue on MAC OSX g++ compiler, but it worked fine on gcc 4.3.1
+* While looking through code in cache.cpp, looking for return statements and seeing the code block limits will be most helpful
+
+*************
+Results Table
+*************
+
+*L1* 
+Size		
+Assoc	
+Blocksize	
+
+*L2*		
+Size		
+Assoc		
+BlockSize	
+
+*L3*
+Size
+Assoc
+BlockSize
+--------------------------------------
+
+art CPI
+swim CPI
+art AMAT
+swim AMAT
+
+L1 miss
+L2 l miss
+victim miss
+L2 g miss
+
